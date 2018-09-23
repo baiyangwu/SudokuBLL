@@ -1,6 +1,16 @@
 package pkgGame;
 
-public class Sudoku {
+import java.util.Arrays;
 
-	private int[][] puzzle;
+import pkgHelper.LatinSquare;;
+
+public class Sudoku extends LatinSquare{
+
+	public Sudoku() {
+		super();
+	}
+	
+	public Sudoku(int[][] latinSquare) {
+		super(latinSquare);
+	}
 }
