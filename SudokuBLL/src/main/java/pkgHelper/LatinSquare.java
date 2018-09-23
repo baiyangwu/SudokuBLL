@@ -2,7 +2,7 @@ package pkgHelper;
 
 import java.util.Arrays;
 
-public class LatinSquare {
+public class LatinSquare extends java.lang.Object{
 
 	/**
 	 * LatinSquare - two dimensional array that's the core of the puzzle
