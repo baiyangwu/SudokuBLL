@@ -67,7 +67,7 @@ public class Sudoku extends LatinSquare
 		
 		for (;j<jMax;j++) 
 		{
-			for (i=(r%iSqrtSize)*iSqrtSize; i<iMax;i++) 
+			for (i=(r%iSqrtSize)*iSqrtSize;i<iMax;i++) 
 			{
 				reg[iCnt = iCnt+1]= super.getLatinSquare()[j][i];
 			}
@@ -77,7 +77,7 @@ public class Sudoku extends LatinSquare
 	
 	
 	
-	public boolean isPartialSudoku()
+	public boolean isSudoku()
 	{
 		if (!super.isLatinSquare()) 
 		{
@@ -92,27 +92,40 @@ public class Sudoku extends LatinSquare
 			if (!hasAllValues(getRow(0),getRegion(k))) 
 			{
 				return false;
-			}
+			}	
 		}
 		return true;
 	}
 	
 	
 	
-	public boolean isSudoku()
+	public boolean isPartialSudoku()
 	{
-		if (isPartialSudoku())
+		if (isSudoku())
 		{
-			return true;
+			if (super.ContainsZero()) 
+			{
+				return true;
+			}
 		}
 		return false;
 	}
 
 	
 	
-	public boolean isValidValue(int iCol, int iRow, int iValue)
+	public boolean isValueValid(int iCol, int iRow, int iValue)
 	{
-		return false;
+		for (int a = 0; a < iSize; a++) 
+		{
+			for (int b = 0; b < iSize; b++) 
+			{
+				if (iValue==iRow||iValue==iCol) 
+				{
+					return false;
+				}
+			}	
+		}
+		return true;
 	}
 	
 	
