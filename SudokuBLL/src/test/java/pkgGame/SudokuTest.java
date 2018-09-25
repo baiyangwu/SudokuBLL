@@ -11,9 +11,9 @@ public class SudokuTest
 	@Test
 	public void getRegion_test1() throws Exception 
 	{
-		int[][] MySquare = { { 1, 2, 3, 4 }, { 3, 1, 4, 2 }, { 2, 3, 1, 4 }, { 4, 3, 2, 1 } };
+		int[][] Mypuzzle = { { 1, 2, 3, 4 }, { 3, 1, 4, 2 }, { 2, 3, 1, 4 }, { 4, 3, 2, 1 } };
 
-		Sudoku Su = new Sudoku(MySquare);
+		Sudoku Su = new Sudoku(Mypuzzle);
 		int [] ExpectedRegion = {2,3,4,3};
 		int [] Reg = Su.getRegion(0,2);
 		
@@ -24,9 +24,9 @@ public class SudokuTest
 	@Test
 	public void getRegion_test2() throws Exception 
 	{
-		int[][] MySquare = { { 1, 2, 3, 4 }, { 3, 1, 4, 2 }, { 2, 3, 1, 4 }, { 4, 3, 2, 1 } };
+		int[][] Mypuzzle = { { 1, 2, 3, 4 }, { 3, 1, 4, 2 }, { 2, 3, 1, 4 }, { 4, 3, 2, 1 } };
 
-		Sudoku Su = new Sudoku(MySquare);
+		Sudoku Su = new Sudoku(Mypuzzle);
 		int [] ExpectedRegion = {2,3,4,3};
 		int [] Reg = Su.getRegion(2);
 		
@@ -37,7 +37,7 @@ public class SudokuTest
 	@Test
 	public void isSudoku_Test1() throws Exception {
 		
-		int[][] MySquare = { {1,2,3,4,5,6,7,8,9},
+		int[][] Mypuzzle = { {1,2,3,4,5,6,7,8,9},
 		{1,2,3,4,5,6,7,8,9},
 		{1,2,3,4,5,6,7,8,9},
 		{1,2,3,4,5,6,7,8,9},
@@ -48,7 +48,7 @@ public class SudokuTest
 		{1,2,3,4,5,6,7,8,9}
 		};
 
-		Sudoku Su = new Sudoku(MySquare);
+		Sudoku Su = new Sudoku(Mypuzzle);
 		
 		assertTrue(Su.isSudoku());
 	}
@@ -58,7 +58,7 @@ public class SudokuTest
 		@Test
 		public void isPartialSudoku_Test1() throws Exception {
 			
-			int[][] MySquare = { {1,2,3,4,5,0,7,8,9},
+			int[][] Mypuzzle = { {1,2,3,4,5,0,7,8,9},
 			{1,2,3,4,5,0,7,8,9},
 			{1,2,3,0,5,6,7,8,9},
 			{1,2,3,4,5,6,7,8,9},
@@ -69,7 +69,7 @@ public class SudokuTest
 			{1,2,3,4,5,6,7,8,9}
 			};
 
-			Sudoku Su = new Sudoku(MySquare);
+			Sudoku Su = new Sudoku(Mypuzzle);
 			
 			assertTrue(Su.isPartialSudoku());
 		}
@@ -78,7 +78,7 @@ public class SudokuTest
 			@Test
 			public void isValueValid_test1() throws Exception {
 				
-				int[][] MySquare = { {1,2,3,4,5,6,7,8,9},
+				int[][] Mypuzzle = { {1,2,3,4,5,6,7,8,9},
 				{1,2,3,4,5,6,7,8,9},
 				{1,2,3,4,5,6,7,8,9},
 				{1,2,3,4,5,6,7,8,9},
@@ -89,7 +89,7 @@ public class SudokuTest
 				{1,2,3,4,5,6,7,8,9}
 				};
 
-				Sudoku Su = new Sudoku(MySquare);
+				Sudoku Su = new Sudoku(Mypuzzle);
 				
 				assertTrue(Su.isValueValid(0, 0, 1));
 			}

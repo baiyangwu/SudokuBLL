@@ -56,21 +56,21 @@ public class Sudoku extends LatinSquare
 	
 	public int[] getRegion(int r)
 	{
-		int [] reg = new int[super.getLatinSquare().length];
+		int Counter = 0;
+		int [] region = new int[super.getLatinSquare().length];
 		int i = (r%iSqrtSize)*iSqrtSize;
 		int j = (r/iSqrtSize)*iSqrtSize;
 		int iMax = i + iSqrtSize;
 		int jMax = j + iSqrtSize;
-		int iCnt = 0;
-		
+
 		for (;j<jMax;j++) 
 		{
 			for (i=(r%iSqrtSize)*iSqrtSize;i<iMax;i++) 
 			{
-				reg[iCnt = iCnt+1]= super.getLatinSquare()[j][i];
+				region[Counter = Counter+1]= super.getLatinSquare()[j][i];
 			}
 		}	
-		return reg;
+		return region;
 	}
 	
 	
@@ -81,13 +81,13 @@ public class Sudoku extends LatinSquare
 		{
 			return false;
 		}
-		for (int k=0 ; k< this.getPuzzle().length;k++) 
+		for (int i=0 ; i< this.getPuzzle().length;i++) 
 		{
-			if (super.hasDuplicates(getRegion(k)))
+			if (super.hasDuplicates(getRegion(i)))
 			{
 				return false;
 			}
-			if (!hasAllValues(getRow(0),getRegion(k))) 
+			if (!hasAllValues(getRow(0),getRegion(i))) 
 			{
 				return false;
 			}	
