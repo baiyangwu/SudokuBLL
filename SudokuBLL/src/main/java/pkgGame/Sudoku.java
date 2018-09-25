@@ -111,22 +111,32 @@ public class Sudoku extends LatinSquare
 	}
 
 	
-	
-	public boolean isValueValid(int iCol, int iRow, int iValue)
+	public boolean isValidValue(int iCol, int iRow, int iValue)
 	{
-		for (int a = 0; a < iSize; a++) 
+		int tmp = this.getPuzzle()[iRow][iCol];
+		this.getPuzzle()[iRow][iCol] = iValue;
+		
+		if (this.hasDuplicates(this.getRow(iRow)))
 		{
-			for (int b = 0; b < iSize; b++) 
-			{
-				if (iValue==iRow||iValue==iCol) 
-				{
-					return false;
-				}
-			}	
+			this.getPuzzle()[iRow][iCol] = tmp;
+			return false;
 		}
+
+		if (this.hasDuplicates(this.getColumn(iCol)))
+		{
+			this.getPuzzle()[iRow][iCol] = tmp;
+			return false;
+		}
+	
+		if (this.hasDuplicates(this.getRegion(iCol, iRow)))
+		{
+			this.getPuzzle()[iRow][iCol] = tmp;
+			return false;
+		}
+		
+		this.getPuzzle()[iRow][iCol] = tmp;
 		return true;
 	}
-	
 	
 	
 }

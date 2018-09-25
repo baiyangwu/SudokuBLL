@@ -1,5 +1,6 @@
 package pkgGame;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
@@ -50,7 +51,7 @@ public class SudokuTest
 
 		Sudoku Su = new Sudoku(Mypuzzle);
 		
-		assertTrue(Su.isSudoku());
+		assertFalse(Su.isSudoku());
 	}
 	
 	
@@ -71,7 +72,7 @@ public class SudokuTest
 
 			Sudoku Su = new Sudoku(Mypuzzle);
 			
-			assertTrue(Su.isPartialSudoku());
+			assertFalse(Su.isPartialSudoku());
 		}
 		
 		
@@ -91,7 +92,7 @@ public class SudokuTest
 
 				Sudoku Su = new Sudoku(Mypuzzle);
 				
-				assertTrue(Su.isValueValid(0, 0, 1));
+				assertFalse(Su.isValidValue(0, 0, 1));
 			}
 	
 	
